@@ -15,6 +15,7 @@ solutionFrame = data.frame(Make = vector(),
                            Colour = vector(),
                            Time = vector()
                            )
+
 # bestSolution stores the solution that has returned the highest fitness value. A solution will be found
 # once all 22 constraints are passed
 bestSolution <- 0
@@ -108,7 +109,8 @@ test_constraints <- function(solution) {
   return(sum(fitness))
 } 
 
-for (i in 1:10000) {
+# turn this into a while loop while(bestSolution != 22)
+for (i in 1:100000) {
   # Randomise a data frame by sampling each attribute
   car.data <- data.frame(
     Make = sample(makes),
